@@ -143,4 +143,41 @@ html {
   border-radius: 0.5rem;
   border-bottom: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem rgba(255, 255, 255, 0.01);
+  cursor: pointer;
+}
+
+.song-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient((to right, #3baa7b, #62bc68));
+  border-radius: 0.5rem;
+}
+
+.time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.time span {
+  font-size: 1.2rem;
+  color: #a8a9ab;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.play-pause {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(to right, #3baa7b, #62bc68);
+  color: #fff;
 }
