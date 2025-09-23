@@ -73,6 +73,9 @@ html {
   border-radius: 50%;
   box-shadow: 0.6rem 0.6rem 4rem -0.1rem rgba(0, 0, 0, 0.9),
     -0.6rem -0.6rem 4rem -0.2rem rgba(255, 255, 255, 0.4);
+  position: relative;
+
+  transform: rotateZ(-15deg);
 }
 
 .cover {
@@ -80,4 +83,64 @@ html {
   height: 100%;
   background-color: #101112;
   border-radius: 50%;
+}
+
+.cover span {
+  font-family: "Delicious Handrawn", cursive;
+  position: absolute;
+  display: block;
+}
+
+.cover span:nth-child(1) {
+  color: #ddd;
+  font-size: 1.6rem;
+  top: 20%;
+  left: 30%;
+}
+.cover span:nth-child(2) {
+  color: #fff;
+  font-size: 2.5rem;
+  top: 35%;
+  left: 20%;
+  width: 10rem;
+  text-align: center;
+}
+
+.song-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-name {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+}
+.song-artist {
+  font-size: 1.2rem;
+  color: #a8a9ab;
+}
+
+.song-info i {
+  font-size: 2rem;
+  background: linear-gradient(to right, #3baa7b, #62bc68);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.song-time {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #0c0c0d;
+  border-radius: 0.5rem;
+  border-bottom: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(255, 255, 255, 0.01);
 }
