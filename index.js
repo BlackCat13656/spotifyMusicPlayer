@@ -2,17 +2,17 @@ const songData = [
   {
     name: "Color Out",
     artist: "Alone",
-    src: "Color Out - Alone.mp3",
+    src: "Alone_-_Color_Out.mp3",
   },
   {
     name: "Do I",
     artist: "Leeona",
-    src: "Do I - Leeona.mp3",
+    src: "LEEONA_-_LEEONA_-_Do_I.mp3",
   },
   {
     name: "Radio Nowhere",
     artist: "Molotov Heart",
-    src: "Radio Nowhere - Molotov Heart.mp3",
+    src: "Molotov_Heart_-_radionowhere.mp3",
   },
 ];
 
@@ -31,7 +31,7 @@ const coverArtist = document.querySelector(".cover span:nth-child(1)");
 
 let songIndex = 0;
 
-window.addEventListener("Load", () => {
+window.addEventListener("load", () => {
   loadSong(songIndex);
 });
 
@@ -64,3 +64,24 @@ playPauseBtn.addEventListener("click", () => {
     playSong();
   }
 });
+
+const prevSongPlay = () => {
+  songIndex--;
+  if (songIndex < 0) {
+    songIndex = songData.length - 1;
+  }
+  loadSong(songIndex);
+  playSong();
+};
+
+const nextSongPlay = () => {
+  songIndex++;
+  if (songIndex > songData.length - 1) {
+    songIndex = 0;
+  }
+  loadSong(songIndex);
+  playSong();
+};
+
+prevBtn.addEventListener("click", prevSongPlay);
+nextBtn.addEventListener("click", nextSongPlay);
