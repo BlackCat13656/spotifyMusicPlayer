@@ -85,6 +85,20 @@ html {
   border-radius: 50%;
 }
 
+.rotate {
+  animation: coverRotate 10s linear infinite;
+}
+
+@keyframes coverRotate {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .cover span {
   font-family: "Delicious Handrawn", cursive;
   position: absolute;

@@ -40,5 +40,27 @@ const loadSong = (index) => {
   coverArtist.textContent = songData[index].artist;
   songName.textContent = songData[index].name;
   songArtist.textContent = songData[index].artist;
-  audio.src = `music/${songData[index].src}.mp3`;
+  audio.src = `music/${songData[index].src}`;
 };
+
+const playSong = () => {
+  container.classList.add("pause");
+  playPauseBtn.firstElementChild.className = "fa-solid fa-pause";
+  audio.play();
+  cover.classList.add("rotate");
+};
+
+const pauseSong = () => {
+  container.classList.remove("pause");
+  playPauseBtn.firstElementChild.className = "fa-solid fa-play";
+  audio.pause();
+  cover.classList.remove("rotate");
+};
+
+playPauseBtn.addEventListener("click", () => {
+  if (container.classList.contains("pause")) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+});
