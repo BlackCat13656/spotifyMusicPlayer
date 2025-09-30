@@ -85,3 +85,10 @@ const nextSongPlay = () => {
 
 prevBtn.addEventListener("click", prevSongPlay);
 nextBtn.addEventListener("click", nextSongPlay);
+
+audio.addEventListener("timeupdate", (e) => {
+  const currentTime = e.target.currentTime;
+  const duration = e.target.duration;
+  let currentTimeWidth = (currentTime / duration) * 100;
+  songProgress.style.width = `${currentTimeWidth}%`;
+});
