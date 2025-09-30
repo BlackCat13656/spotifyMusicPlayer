@@ -91,4 +91,29 @@ audio.addEventListener("timeupdate", (e) => {
   const duration = e.target.duration;
   let currentTimeWidth = (currentTime / duration) * 100;
   songProgress.style.width = `${currentTimeWidth}%`;
+
+  let songCurrentTime = document.querySelector(".time span:nth-child(1)");
+  let songDuration = document.querySelector(".time span:nth-child(2)");
+
+  audio.addEventListener("loadeddata", () => {
+    let audioDuration = audio.duration;
+
+    let totalMinutes = Math.floor(audioDuration / 60);
+    let totalSeconds = Math.floor(audioDuration % 60);
+
+    if (totalSeconds < 10) {
+      totalSeconds = `0${totalSeconds}`;
+    }
+
+    songDuration.textContent = `${totalMinutes}:${totalSeconds}`;
+  });
+
+  let currentMinutes = Math.floor(currentTime / 60);
+  let currentSeconds = Math.floor(currentTime % 60);
+
+  if (currentSeconds < 10) {
+    currentSeconds = `0${currentSeconds}`;
+  }
+
+  songCurrentTime.textContent = `${currentMinutes}:${currentSeconds}`;
 });
